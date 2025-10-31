@@ -101,6 +101,48 @@ body {
     .sidebar {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        #form-container {
+            width: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+    }
+
+    #book-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        label {
+            font-size: 1rem;
+        }
+
+        input[type="text"], input[type="number"] {
+            padding: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.5);
+            margin-left: 10px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: start;
+        }
     }
 }
 

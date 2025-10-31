@@ -15,11 +15,28 @@
         <div id="library-container">
             <!-- Books will be displayed here -->
         </div>
-        <div class="button-section">
-            <button class="add-book">Add new book</button>
-        </div>
     </div>     
     <div class="sidebar">
+        <button id="add-book-btn">Add new book</button>
+        <div class="hidden" id="form-container">
+            <form id="book-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
+
+                <label for="pages">Pages:</label>
+                <input type="number" id="pages" name="pages" required>
+
+                <checkbox-container>
+                    <label for="read">Read:</label>
+                    <input type="checkbox" id="read" name="read">
+                </checkbox-container>
+
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
 
     </div>
     

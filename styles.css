@@ -54,6 +54,12 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+/* CUSTOM STYLES */
+
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 body {
     display: grid;
     grid-template-columns: 75% 25%;
@@ -63,12 +69,28 @@ body {
     margin-right: auto;
     margin-top: 5vh;
     gap: 10px;
+    background-color: #F4F3EE;
+    font-family: "Montserrat", sans-serif;
 
-    div {
+    button {
+        background-color: #fff;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, color 0.3s;
+        padding: 5px 10px;
+    }
+    button:hover {
+        background-color: #CB997E;
+        cursor: pointer;
+    }
+
+    /* div {
         border: 1px solid black;
         padding: 10px;
         box-sizing: border-box;
-    }
+    } */
 
     .title-bar {
         grid-column: 1 / span 2;
@@ -85,7 +107,6 @@ body {
     .main {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
-        padding: 0;
 
         .button-section {
             display: flex;
@@ -103,7 +124,12 @@ body {
         grid-row: 2 / 3;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+        padding: 20px;
+
+        button {
+            align-self: center;
+        }
 
         #form-container {
             width: 100%;
@@ -117,7 +143,7 @@ body {
     #book-form {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
 
         label {
             font-size: 1rem;
@@ -150,6 +176,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
+    color: #F4F3EE;
 
     h2 {
         font-size: 1.2rem;
@@ -159,7 +186,22 @@ body {
 
     .book {
         padding: 10px;
-        background-color: rgb(250, 198, 120);
-        min-height: 300px;
+        min-height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: black;
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .buttons-div {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
     }
 }

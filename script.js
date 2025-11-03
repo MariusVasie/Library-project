@@ -52,6 +52,21 @@ function displayBooks() {
         readStatus.textContent = `Read: ${book.read ? 'Yes' : 'No'}`;
         bookDiv.appendChild(readStatus);
 
+        const buttonsDiv = document.createElement('div');
+        buttonsDiv.classList.add('buttons-div');
+        bookDiv.appendChild(buttonsDiv);
+        const toggleReadButton = document.createElement('button');
+        toggleReadButton.textContent = 'Toggle Read Status';
+        toggleReadButton.addEventListener('click', () => {
+            book.read = !book.read;
+            readStatus.textContent = `Read: ${book.read ? 'Yes' : 'No'}`;
+            if (book.read) {
+                bookDiv.style.backgroundColor = '#A5A58D'; // Green
+            } else {
+                bookDiv.style.backgroundColor = '#DDBEA9'; // Red
+            }
+        })
+        buttonsDiv.appendChild(toggleReadButton);
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Remove book';
         deleteButton.addEventListener('click', () => {
@@ -61,9 +76,16 @@ function displayBooks() {
                 myLibrary.splice(bookIndex, 1);
                 libraryContainer.removeChild(bookDiv);
             }})
-        bookDiv.appendChild(deleteButton);
+        buttonsDiv.appendChild(deleteButton);
+        
 
         libraryContainer.appendChild(bookDiv);
+
+        if (book.read) {
+                bookDiv.style.backgroundColor = '#A5A58D'; // Green
+            } else {
+                bookDiv.style.backgroundColor = '#DDBEA9'; // Red
+            }
     });
 }
 
